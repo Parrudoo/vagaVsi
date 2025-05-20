@@ -12,39 +12,29 @@ public class Pessoa {
 		this.idade = idade;
 	}
 	
-	
-
-//	@Override
-//	public int hashCode() {
-//		return Objects.hash(idade, nome);
-//	}
-
-
-
-//	@Override
-//	public boolean equals(Object obj) {
-//		if (this == obj)
-//			return true;
-//		if (obj == null)
-//			return false;
-//		if (getClass() != obj.getClass())
-//			return false;
-//		Pessoa other = (Pessoa) obj;
-//		return idade == other.idade && Objects.equals(nome, other.nome);
-//	}
-	
-	
-	@Override
-	public boolean equals(Object obj) {
-	    // Compara se as referências são as mesmas
-	    return this == obj;
-	}
-	
-
-
 	public String getNome() {
 		return nome;
 	}
+
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(idade, nome);
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Pessoa other = (Pessoa) obj;
+		return idade == other.idade && Objects.equals(nome, other.nome);
+	}
+
 
 	public void setNome(String nome) {
 		this.nome = nome;
